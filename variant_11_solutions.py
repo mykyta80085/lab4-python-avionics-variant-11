@@ -6,6 +6,12 @@
 
 # Задача 1: Витрата палива для зведення з орбіти (if/elif/else)
 def deorbit_maneuver(fuel_mass: float) -> str:
+    if fuel_mass >= 15:
+        return("Повний гальмівний імпульс")
+    elif 5 <= fuel_mass < 15:
+        return("Частковий імпульс")
+    else:
+        return("Пасивний аеродинамічний парус")
     """
     - fuel_mass >= 15 -> "Повний гальмівний імпульс"
     - 5 <= fuel_mass < 15 -> "Частковий імпульс"
