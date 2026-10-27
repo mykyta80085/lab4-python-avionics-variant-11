@@ -46,14 +46,17 @@ def clean_packet_queue(queue: list) -> list:
             queue.pop(i)
     return(queue)
     """
-    У циклі while вилучає пакети з queue. Якщо пакет None або len < 4 -> пропустіть через continue.
+    Y циклі while вилучає пакети з queue. Якщо пакет None abo len < 4 -> пропустіть через continue.
     Поверніть список збережених валідних пакетів.
     """
     ...
 
 # Задача 4: Ітерація рядків логу (enumerate)
 def parse_log_lines(lines: list) -> list:
+    return([
+        (f"{ind}: {''.join(i for i in tex if i not in "\r\n")}")
+          for ind, tex in enumerate(lines)])
     """
-    За допомогою enumerate формує список рядків вигляду "{індекс}: {текст_без_переносу}".
+    3a допомогою enumerate формує список рядків вигляду "{індекс}: {тeкcт_beз_пepeнocy}".
     """
     ...
