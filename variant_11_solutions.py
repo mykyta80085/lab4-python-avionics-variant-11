@@ -37,6 +37,14 @@ def check_stepper_motor(motor_data: tuple) -> str:
 
 # Задача 3: Очищення черги пакетів (while / continue)
 def clean_packet_queue(queue: list) -> list:
+    i = 0
+    while i < len(queue):
+        if queue[i] != None and len(queue[i]) >= 4:
+            i +=1
+            continue
+        else:
+            queue.pop(i)
+    return(queue)
     """
     У циклі while вилучає пакети з queue. Якщо пакет None або len < 4 -> пропустіть через continue.
     Поверніть список збережених валідних пакетів.
