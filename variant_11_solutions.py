@@ -21,10 +21,17 @@ def deorbit_maneuver(fuel_mass: float) -> str:
 
 # Задача 2: Статус крокових двигунів (match-case з вартою)
 def check_stepper_motor(motor_data: tuple) -> str:
+    match motor_data:
+        case id, pos, flag if flag == True:
+            return(f"Помилка двигуна {id}")
+        case id, pos, flag if flag == False:
+            return(f"Двигун {id} y нормі (позиція {pos}°)")
+        case other:
+            return("невідомий error flag")
     """
     Приймає (motor_id, position_deg, error_flag).
     - error_flag == True (через guard if) -> "Помилка двигуна {id}"
-    - error_flag == False -> "Двигун {id} у нормі (позиція {pos}°)"
+    - error_flag == False -> "Двигун {id} y нормі (позиція {pos}°)"
     """
     ...
 
